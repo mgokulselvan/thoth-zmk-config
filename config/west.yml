@@ -5,11 +5,18 @@ manifest:
     #zmk-firmware-official
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
+    # custom status screen for OLED
+    - name: LordPinkFloyd
+      url-base: https://github.com/LordPinkFloyd
     # Additional modules containing boards/shields/custom code can be listed here as well
     # See https://docs.zephyrproject.org/3.2.0/develop/west/manifest.html#projects
   projects:
     - name: zmk
       remote: zmkfirmware
       import: app/west.yml
+    # custom status screen for OLED
+    - name: zmk-nice-oled
+      remote: LordPinkFloyd
+      revision: main
   self:
     path: config
